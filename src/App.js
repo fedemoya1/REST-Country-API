@@ -13,7 +13,6 @@ export default function App() {
   const [country, setCountry] = React.useState([])
   const [mero, setMero] = React.useState([])
   const [active, setActive] = React.useState(false)
-  //const [req, setReq] = React.useState("")
 
   function rooting(){
     if(darkMode){
@@ -30,8 +29,23 @@ export default function App() {
   }
 
   function desactivate(){
+    setRegion("all")
     setActive(!active)
   }
+
+  //codigo nuevo
+
+  function seteame(e){
+    if(e.currentTarget.innerHTML !== "N/A"){
+      setRegion(`alpha/${e.currentTarget.innerHTML}`)
+      console.log("papa")
+    }
+    else{
+      console.log("hola")
+    }
+  }
+
+  //fin de codigo nuevo
 
   function changeCountry(e){
     setRegion(() => {
@@ -97,17 +111,25 @@ export default function App() {
         .then(res => res.json())
         .then(data => {
           if (data.status !== 404){
-            setCountry(data)
+            setCountry(()=>(data))
+
+            //codigo nuevo
+            if(active){
+              setMero(data[0])
+              console.log(mero)
+              console.log("hola")
+            }
+
+            //fin codigo nuevo
             
           }
-          //setReq(`${region}`)
           console.log(data)
         })
         .catch(error => {
           console.log(error)
         }
         ))
-  ,[region])
+  ,[region, Principal])
 
   function toggleMode(){
     setDarkMode(prevMode => !prevMode)
@@ -138,6 +160,7 @@ export default function App() {
             {!active ?  countries : 
             <Principal
               darkMode={darkMode}
+              //tierra={mero}
               img={mero.flags.png}
               country={mero.name.official}
               native={mero.name.nativeName}
@@ -145,11 +168,13 @@ export default function App() {
               region={mero.region}
               sub={mero.subregion}
               capital={mero.capital}
-              domain={mero.tld[0]}
+              domain={mero.tld? mero.tld[0]: "N/A"}
               currencies={mero.currencies}
               languages={mero.languages}
               border={mero.borders ? mero.borders : ["N/A"]}
-
+              //codigo nuevo
+              handleClickMe={seteame}
+              //fin codigo nuevo
             />
             }
           </main> 
@@ -160,5 +185,3 @@ export default function App() {
 
   )
 }
-
-//<Main />

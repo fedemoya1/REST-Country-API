@@ -306,12 +306,14 @@
     box-shadow: 0px 0px 5px 1px var(--very-dark-blue-2);
     background-color: var(--dark-blue);
     color: var(--very-light-gray);
+    cursor: pointer;
 }
 
 .light-li{
     box-shadow: 0px 0px 5px 1px var(--dark-gray);
     background-color: var(--very-light-gray);
     color: var(--dark-blue);
+    cursor: pointer;
 }
 
 

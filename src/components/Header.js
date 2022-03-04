@@ -1,6 +1,6 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from "@fortawesome/free-regular-svg-icons";
+import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header(props){
 
@@ -21,7 +21,11 @@ export default function Header(props){
                 onClick={props.handleClick} 
                 className={props.darkMode ? "dark--btn" : "light--btn"}
             >
-            <FontAwesomeIcon icon={faMoon} />
+            {props.darkMode ? 
+                <FontAwesomeIcon icon={faSun} />
+                    :
+                <FontAwesomeIcon icon={faMoon} />
+            }
                 {props.darkMode? "Light Mode" : "Dark Mode"}
             </div>
             

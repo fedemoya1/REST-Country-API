@@ -24,8 +24,8 @@ export default function Nav(props){
                 name="continent"
                 className={props.darkMode? "dark--sel" : "light--sel"}
                 onChange={props.changeCountry} 
+                placeholder="Filter by Region"
             >
-                <option value="all">Filter by Region</option>
                 <option value="africa">Africa</option>
                 <option value="america">America</option>
                 <option value="asia">Asia</option>
@@ -34,5 +34,6 @@ export default function Nav(props){
             </select>
         </nav>
 
+//<option value="">All Regions</option>
     )
 }

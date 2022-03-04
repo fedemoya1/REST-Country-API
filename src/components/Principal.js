@@ -18,13 +18,16 @@ export default function Principal(props){
     for (let key in props.languages) {
         lang.push(props.languages[key])
     }
-
+      
     var limites = props.border.map( con => {
-       
+
         return(
             <li 
                 key={nanoid()}
                 className={props.darkMode ? "dark-li" : "light-li"}
+                //codigo nuevo
+                onClick={(e) => props.handleClickMe(e)}
+                //fin codigo nuevo
             >
                 {con}
             </li>
@@ -34,7 +37,6 @@ export default function Principal(props){
     return(
         <div 
             className={props.darkMode? "dark--territory" : "light--territory"}
-            //className="--block"
         >
             <img 
                 src={props.img} 
@@ -70,8 +72,8 @@ export default function Principal(props){
                         <p>Border Countries:</p>
                         {limites}
                     </ul>
+                </div>
+                        
             </div>
-
-        </div>
-    )
-}
+            )
+        }
