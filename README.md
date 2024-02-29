@@ -3,7 +3,7 @@
 - In this project  I used ReactJS, HTML5, CSS3, Redux, Redux-Toolkit, React-Router, FontAwesome, Vite.
 - I took this challenge just to show my skills. It might has some errors but Im still learning and I will improve.
 - In this page you can find different countries with some of their info.
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/0a37cbb1-dff0-4663-93f5-5ccf7fae077b/deploy-status)](https://app.netlify.com/sites/country-react-app-fede/deploys)
+- [Click here](https://country-react-app-fede.netlify.app/) to enter in the app.
 
 Here are some changes that I made in the last commit:
 
