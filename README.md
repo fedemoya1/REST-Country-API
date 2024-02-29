@@ -9,8 +9,8 @@ Here are some changes that I made in the last commit:
 
 First we're going to look at the first version of the project:
 
--The filter was held the last valid input, however, for each character introduced by the user it was calling the API, as consecuence, it ends on a massive data consumption.
--Also, when the user used the input field, the select field sets its value to ""
+-The filter retained the last valid input; however, for each character introduced by the user, it made an API call. As a consequence, this resulted in massive data consumption. 
+-Additionally, when the user used the input field, the select field set its value to an empty string ('').
 ![First Version of the project, filter](./src/assets/Primera-Version-filtro.PNG)
 
 -The first version had no routing and it still had multiple api calls for each change, that aplies even to the "Back" button.
